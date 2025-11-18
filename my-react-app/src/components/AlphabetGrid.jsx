@@ -30,5 +30,14 @@ export default AlphabetGrid;
 const styles = {
     grid: {
             display: 'grid',
+            gridTemplateColumns: 'repeat(6, 1fr)',
+            gap: '10px',
+            padding: '20px',
         }
+    button: {
+        padding: '20px',
+        fontsize: '20px',
+        cursor: 'pointer',
+        borderRadius: '10px'
     };
+}

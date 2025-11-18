@@ -19,7 +19,7 @@ function App(){
         <>
             {selectedLetter === null ? (
                 <AlphabetGrid onSelectLetter={handleSelectLetter} />
-            ) :(<LetterPage
+            ) : (<LetterPage
                 letter={selectedLetter}
                 data={alphabetData[selectedLetter]}
                 onBack={handleBack}
