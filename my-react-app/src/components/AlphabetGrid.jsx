@@ -25,7 +25,6 @@ function AlphabetGrid({ onSelectLetter }) {
 
 }
 
-export default AlphabetGrid;
 
 const styles = {
     grid: {
@@ -41,3 +40,5 @@ const styles = {
         borderRadius: '10px',
     }
 };
+
+export default AlphabetGrid;
