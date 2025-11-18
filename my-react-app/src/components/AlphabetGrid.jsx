@@ -8,7 +8,18 @@ function AlphabetGrid({ onSelectLetter }) {
     
     return (
         <div style={styles.grid}>
-            
+            {letters.map(function(letter) {
+                return (
+                    <button 
+                        key={letter} 
+                        onClick={() => onSelectLetter(letter)}
+                        styles={styles.button}
+                        >
+                        {letter}
+                    </button>
+                );
+            }
+            )}
         </div>    
         );
 
