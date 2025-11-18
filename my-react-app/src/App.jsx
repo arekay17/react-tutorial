@@ -14,5 +14,13 @@ function App(){
     };
 
     return (
+        <>
+            {selectedLetter === null ? (
+                <AlphabetGrid onSelectLetter={handleSelectLetter} />
+            ) : ()
+            };
+        
+        </>
+    )
 
-}
+};
