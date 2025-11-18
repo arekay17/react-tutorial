@@ -33,11 +33,11 @@ const styles = {
             gridTemplateColumns: 'repeat(6, 1fr)',
             gap: '10px',
             padding: '20px',
-        }
+        },
     button: {
         padding: '20px',
         fontsize: '20px',
         cursor: 'pointer',
-        borderRadius: '10px'
-    };
-}
+        borderRadius: '10px',
+    }
+};
