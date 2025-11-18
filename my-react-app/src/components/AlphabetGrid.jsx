@@ -25,6 +25,8 @@ function AlphabetGrid({ onSelectLetter }) {
 
 }
 
+export default AlphabetGrid;
+
 const styles = {
     grid: {
             display: 'grid',
