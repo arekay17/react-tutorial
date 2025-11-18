@@ -6,6 +6,16 @@ function AlphabetGrid({ onSelectLetter }) {
         letters.push(String.fromCharCode(i));
     };
     
-
+    return (
+        <div style={styles.grid}>
+            
+        </div>    
+        );
 
 }
+
+const styles = {
+    grid: {
+            display: 'grid',
+        }
+    };
