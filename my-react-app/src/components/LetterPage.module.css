@@ -1,0 +1,14 @@
+.container {
+    text-align: center;
+    padding: 20px;
+}
+.backButton {
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+.image {
+    width: 250px;
+    border-radius: 15px;
+    margin-top: 20px;
+}
