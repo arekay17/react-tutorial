@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import AlphabetGrid from './components/AlphabetGrid';
-import { alphabetData } from './data/words';
+import alphabetData from './data/words';
 import LetterPage from './components/LetterPage';
 
 
@@ -19,13 +19,14 @@ function App(){
         <>
             {selectedLetter === null ? (
                 <AlphabetGrid onSelectLetter={handleSelectLetter} />
-            ) : (<LetterPage
-                letter={selectedLetter}
-                data={alphabetData[selectedLetter]}
-                onBack={handleBack}
-            />)
-            };
-        
+            ) : (
+                <LetterPage
+                    letter={selectedLetter}
+                    data={alphabetData[selectedLetter]}
+                    onBack={handleBack}
+                />
+            )}
+
         </>
     )
 
