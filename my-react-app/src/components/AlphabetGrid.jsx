@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './AlphabetGrid.module.css';
 
 function AlphabetGrid({ onSelectLetter }) {
     const letters = [];
@@ -25,20 +26,5 @@ function AlphabetGrid({ onSelectLetter }) {
 
 }
 
-
-const styles = {
-    grid: {
-            display: 'grid',
-            gridTemplateColumns: 'repeat(6, 1fr)',
-            gap: '10px',
-            padding: '20px',
-        },
-    button: {
-        padding: '20px',
-        fontsize: '20px',
-        cursor: 'pointer',
-        borderRadius: '10px',
-    }
-};
 
 export default AlphabetGrid;
