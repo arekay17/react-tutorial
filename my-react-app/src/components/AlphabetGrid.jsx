@@ -8,13 +8,13 @@ function AlphabetGrid({ onSelectLetter }) {
     };
     
     return (
-        <div style={styles.grid}>
+        <div className={styles.grid}>
             {letters.map(function(letter) {
                 return (
                     <button 
                         key={letter} 
                         onClick={() => onSelectLetter(letter)}
-                        styles={styles.button}
+                        className={styles.button}
                         >
                         {letter}
                     </button>
@@ -25,6 +25,5 @@ function AlphabetGrid({ onSelectLetter }) {
         );
 
 }
-
 
 export default AlphabetGrid;
