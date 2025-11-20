@@ -5,7 +5,7 @@ function LetterPage ({ letter, data, onBack }) {
     return (
         <div className={styles.container}>
             <button onClick={onBack} className={styles.backButton}>Back</button>
-            <h1>{letter} for the {data.word}</h1>
+            <h1>{letter} for {data.word}</h1>
             <img src={data.image} alt={data.word} className={styles.image} />
         </div>
     );
