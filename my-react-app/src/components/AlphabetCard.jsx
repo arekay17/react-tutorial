@@ -1,12 +1,12 @@
 import React from 'react';
 import styles from './AlphabetCard.module.css';
 
-function AlphabetCard({ letter, onClick }) {
+function AlphabetCard({ letter, onSelectLetter }) {
     return (
-        <button className={styles.button} onClick={onClick}>
+        <button className={styles.card} onClick={function() {onSelectLetter(letter)}}>
             {letter}
         </button>
     )
-};
+}
 
 export default AlphabetCard;

@@ -13,7 +13,7 @@ function AlphabetGrid({ onSelectLetter }) {
             {
                 letters.map(function(letter){
                     return(
-                        <AlphabetCard key={letter} letter={letter} onClick={function(){ onSelectLetter(letter)}} />
+                        <AlphabetCard key={letter} letter={letter} onSelectLetter={onSelectLetter} />
                     )
                 })
             }

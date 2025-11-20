@@ -1,7 +1,37 @@
+.card {
+  min-width: 60px;
+  min-height: 60px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
 
-.button {
-    padding: 20px;
-    font-size: 20px;
-    cursor: pointer;
-    border-radius: 10px;
+  font-size: 1.6rem;
+  font-weight: 600;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(135deg, #4f46e5, #ec4899);
+  color: white;
+
+  /* Smooth animation */
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    filter 0.2s ease;
+}
+
+/* Hover: lift + glow */
+.card:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.25);
+  filter: brightness(1.1);
+}
+
+/* Click/active: press effect */
+.card:active {
+  transform: translateY(0) scale(0.96);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  filter: brightness(0.95);
 }
