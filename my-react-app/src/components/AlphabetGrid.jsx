@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './AlphabetGrid.module.css';
+import AlphabetCard from './AlphabetCard';
 
 function AlphabetGrid({ onSelectLetter }) {
     const letters = [];
@@ -9,20 +10,15 @@ function AlphabetGrid({ onSelectLetter }) {
     
     return (
         <div className={styles.grid}>
-            {letters.map(function(letter) {
-                return (
-                    <button 
-                        key={letter} 
-                        onClick={() => onSelectLetter(letter)}
-                        className={styles.button}
-                        >
-                        {letter}
-                    </button>
-                );
+            {
+                letters.map(function(letter){
+                    return(
+                        <AlphabetCard key={letter} letter={letter} onClick={function(){ onSelectLetter(letter)}} />
+                    )
+                })
             }
-            )}
-        </div>    
-        );
+        </div>
+    );
 
 }
 
