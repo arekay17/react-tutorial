@@ -1,0 +1,129 @@
+.container {
+  min-height: calc(100vh - 60px);
+  padding: 24px 12px 40px;
+  background: linear-gradient(135deg, #38bdf8, #a855f7);
+  font-family: "Baloo 2", "Comic Sans MS", system-ui, -apple-system, sans-serif;
+  color: #ffffff;
+  text-align: center;
+}
+
+.heading {
+  font-size: 2rem;
+  margin-bottom: 4px;
+  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
+}
+
+.subtitle {
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+  opacity: 0.95;
+}
+
+/* Card grid for each vowel */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  max-width: 600px;
+  margin: 0 auto 24px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.14);
+  border-radius: 22px;
+  padding: 12px 10px 16px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+}
+
+/* Row with letter and word buttons */
+.topRow {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.letterButton {
+  width: 52px;
+  height: 52px;
+  border-radius: 999px;
+  border: none;
+  font-size: 1.6rem;
+  font-weight: 800;
+  cursor: pointer;
+  background: linear-gradient(135deg, #f97316, #facc15);
+  color: #1f2933;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.4);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+}
+
+.wordButton {
+  border: none;
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  background: linear-gradient(135deg, #ec4899, #8b5cf6);
+  color: #ffffff;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.4);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+}
+
+.letterButton:hover,
+.wordButton:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 12px 22px rgba(0, 0, 0, 0.45);
+  filter: brightness(1.05);
+}
+
+.letterButton:active,
+.wordButton:active {
+  transform: translateY(0) scale(0.96);
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Image box inside each card */
+.imageBox {
+  margin-top: 6px;
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 10px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* Back button at the bottom */
+.backButton {
+  margin-top: 10px;
+  border: none;
+  border-radius: 999px;
+  padding: 10px 20px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  background: #facc15;
+  color: #1f2933;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.4);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+}
+
+.backButton:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.45);
+  filter: brightness(1.05);
+}
+
+.backButton:active {
+  transform: translateY(0) scale(0.96);
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.3);
+}
