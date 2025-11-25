@@ -8,15 +8,15 @@ export default function VowelExercise1({ onBack }) {
 
   const letters = Array.from({ length: 26 }, (_, i) =>
     String.fromCharCode(65 + i)
-  );
+  );  
 
   const playCorrectSound = (letter) => {
-    const audio = new Audio(`/sounds/correct-${letter}.mp3`);
+    const audio = new Audio(`/sound/vowels/correct-${letter}.mp3`);
     audio.play();
   };
 
   const playWrongSound = () => {
-    const audio = new Audio("/sounds/wrong.mp3");
+    const audio = new Audio("/sound/vowels/wrong.mp3");
     audio.play();
   };
 
