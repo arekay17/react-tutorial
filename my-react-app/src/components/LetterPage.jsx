@@ -9,7 +9,7 @@ function LetterPage({ letter, data, onBack }) {
       </button>
 
       <h1 className={styles.heading}>
-        {letter} for <span className={styles.word}>{data.word}</span>
+        {letter} untuk <span className={styles.word}>{data.word}</span>
       </h1>
 
       <div className={styles.imageWrapper}>

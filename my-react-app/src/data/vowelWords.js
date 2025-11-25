@@ -1,23 +1,23 @@
 const vowelData = {
     A : {
         word: "Ayam",
-        image: "https://media.istockphoto.com/id/184276818/photo/red-apple.jpg?s=612x612&w=0&k=20&c=NvO-bLsG0DJ_7Ii8SSVoKLurzjmV0Qi4eGfn6nW3l5w="
+        image: "https://png.pngtree.com/png-vector/20240125/ourmid/pngtree-rooster-png-file-png-image_11492091.png"
     },
     E : {
         word: "Emak",
-        image: "https://upload.wikimedia.org/wikipedia/commons/3/37/African_Bush_Elephant.jpg"
+        image: "https://cdn.pixabay.com/photo/2020/05/19/15/57/mother-5191483_960_720.png"
     },
     I : {
         word: "Ikan",
-        image: "https://upload.wikimedia.org/wikipedia/commons/a/a3/Strawberry_ice_cream_cone_%282%29.jpg"
+        image: "https://png.pngtree.com/png-vector/20240913/ourmid/pngtree-tilapia-fish-4k-transparent-background-png-image_13823489.png"
     },
     O : {
         word: "Oren",
-        image: "https://upload.wikimedia.org/wikipedia/commons/c/c4/Orange-Fruit-Pieces.jpg"
+        image: "https://png.pngtree.com/png-clipart/20230502/original/pngtree-orange-fruit-png-image_9134149.png"
     },
     U : {
         word: "Ular",
-        image: "https://upload.wikimedia.org/wikipedia/commons/4/45/Umbrella-Open.jpg"
+        image: "https://png.pngtree.com/png-clipart/20190116/ourmid/pngtree-illustration-realistic-green-snake-dynamic-png-image_386835.png"
     }
 };
 

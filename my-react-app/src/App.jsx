@@ -5,125 +5,146 @@ import LetterPage from './components/LetterPage';
 import StartScreen from './components/StartScreen';
 import VowelMenu from './components/VowelMenu';
 import VowelLearn from './components/VowelLearn';
+import styles from './App.module.css';
+import VowelExercise1 from './components/VowelExercise1';
 
 function App() {
-    // mode variables which can be 'all', 'vowels', 'syllable', 'simple'
-    const [mode, setMode] = useState(null);
+  const [mode, setMode] = useState(null);
+  const [selectedLetter, setSelectedLetter] = useState(null);
 
-    // for 'all' mode letter selection
-    const [selectedLetter, setSelectedLetter] = useState(null);
-    
-    // for 'vowels' mode screen navigation which can be 'menu', 'intro', 'latihan1', 'latihan2'
-    const [vowelScreen, setVowelScreen] = useState('menu'); 
+  // sub-mode untuk bahagian vokal: 'menu', 'intro', 'latihan1', 'latihan2'
+  const [vowelScreen, setVowelScreen] = useState('menu');
 
-    //state handlers
-    const handleSelectMode = function(selectedMode) {
-        setMode(selectedMode);
-        setSelectedLetter(null);
-        setVowelScreen('menu'); // reset vowel screen to menu on mode change
-    };
-    const handleSelectLetter = function(letter) {
-        setSelectedLetter(letter);
-    };
-    const handleBackFromLetterPage = function() {
-        setSelectedLetter(null);
-    };
+  // --- state handlers ---
+  const handleSelectMode = function (selectedMode) {
+    setMode(selectedMode);
+    setSelectedLetter(null);
+    setVowelScreen('menu'); // reset bila tukar mode
+  };
 
-    // Back to Start Screen handler for HomeBar
-    const handleBackToStart = function() {
-        setMode(null);
-        setSelectedLetter(null);
-        setVowelScreen('menu'); // reset vowel screen to menu on mode change
-    };
+  const handleSelectLetter = function (letter) {
+    setSelectedLetter(letter);
+  };
 
-    // Home Button Bar for Pages except Start Screen
-    const HomeBar = (
-        <div style={{padding: "10px", textAlign: "center"}}>
-            <button onClick={handleBackToStart} aria-label="Kembali Ke Muka Depan">Kembali ke Muka Depan</button>
-        </div>
-    )
+  const handleBackFromLetterPage = function () {
+    setSelectedLetter(null);
+  };
 
-    //Screen Rendering Logic
-    if (mode === null) {
-        return <StartScreen onSelectMode={handleSelectMode} />;
-    };
+  // Back to Start Screen handler for HomeBar
+  const handleBackToStart = function () {
+    setMode(null);
+    setSelectedLetter(null);
+    setVowelScreen('menu');
+  };
 
-    // Render for 'all' mode
-    if (mode === 'all') {
-        if (selectedLetter === null) {
-            return (
-                <>
-                { HomeBar }
-                <AlphabetGrid onSelectLetter={handleSelectLetter} />
-                </>
-            );
+
+ // Home Button Bar for Pages except Start Screen
+const HomeBar = (
+  <div className={styles.homeBar}>
+    <button
+      className={styles.homeButton}
+      onClick={handleBackToStart}
+      aria-label="Kembali Ke Muka Depan"
+    >
+      ⬅ Kembali ke Muka Depan
+    </button>
+  </div>
+);
+
+
+  // --- Screen Rendering Logic ---
+
+  // 0) Start screen
+  if (mode === null) {
+    return <StartScreen onSelectMode={handleSelectMode} />;
+  }
+
+  // 1) Render for 'all' mode
+  if (mode === 'all') {
+    if (selectedLetter === null) {
+      return (
+        <>
+          {HomeBar}
+          <AlphabetGrid onSelectLetter={handleSelectLetter} />
+        </>
+      );
     } else {
-        return (
-            <>
-                { HomeBar }
-                <LetterPage letter={selectedLetter} data={alphabetData[selectedLetter]} onBack={handleBackFromLetterPage} />
-            </>
-        )
-        };       
-    };
+      return (
+        <>
+          {HomeBar}
+          <LetterPage
+            letter={selectedLetter}
+            data={alphabetData[selectedLetter]}
+            onBack={handleBackFromLetterPage}
+          />
+        </>
+      );
+    }
+  }
 
-    //render for vowels mode
-    if (mode === 'vowels') {
+  // 2) Render for 'vowels' mode (dengan sub-screen)
+  if (mode === 'vowels') {
     // 2a) Menu utama untuk vokal
-        if (vowelScreen === 'menu') {
-        return (
-            <>
-            {HomeBar}
-            <VowelMenu onSelectOption={setVowelScreen} />
-            </>
-        );
-        }
-
-        // 2b) Mengenal Huruf Vokal
-        if (vowelScreen === 'intro') {
-        return (
-            <>
-            {HomeBar}
-            <VowelLearn onBackToVowelMenu={() => setVowelScreen('menu')} />
-            </>
-        );
-        }
-
-        // 2c) Latihan 1 & 2 (placeholder)
-        if (vowelScreen === 'latihan1' || vowelScreen === 'latihan2') {
-        return (
-            <>
-            {HomeBar}
-            <div style={{ padding: '20px', textAlign: 'center' }}>
-                {vowelScreen === 'latihan1'
-                ? 'Latihan 1 akan datang.'
-                : 'Latihan 2 akan datang.'}
-            </div>
-            </>
-        );
-        }
+    if (vowelScreen === 'menu') {
+      return (
+        <>
+          {HomeBar}
+          <VowelMenu onSelectOption={setVowelScreen} />
+        </>
+      );
     }
 
-    //render for syllable mode
-    if (mode === 'syllable') {
-        return (
-            <>
-            { HomeBar }
-            <div style={{padding : "20px"}}> syllable mode in construction </div>
-            </>
-        );
-    };
+    // 2b) Mengenal Huruf Vokal
+    if (vowelScreen === 'intro') {
+      return (
+        <>
+          {HomeBar}
+          <VowelLearn onBackToVowelMenu={() => setVowelScreen('menu')} />
+        </>
+      );
+    }
 
-    //render for simple words mode
-    if (mode === 'simple') {
-        return (
-            <>
-            { HomeBar }
-            <div style={{padding : "20px"}}> simple words mode in construction </div>
-            </>
-        );
-    };  
-    
-};
+    // 2c) Latihan 1
+    if (vowelScreen === 'latihan1') {
+      return (
+        <>
+          {HomeBar}
+          <VowelExercise1 onBackToVowelMenu={() => setVowelScreen('menu')} />
+        </>
+      );
+    }
+
+    if (vowelScreen === 'latihan2') {
+      return (
+        <>
+          {HomeBar}
+          
+        </>
+      );
+    }
+  }
+
+  // 3) Render for syllable mode
+  if (mode === 'syllable') {
+    return (
+      <>
+        {HomeBar}
+        <div style={{ padding: '20px' }}>syllable mode in construction</div>
+      </>
+    );
+  }
+
+  // 4) Render for simple words mode
+  if (mode === 'simple') {
+    return (
+      <>
+        {HomeBar}
+        <div style={{ padding: '20px' }}>simple words mode in construction</div>
+      </>
+    );
+  }
+
+  return null;
+}
 
 export default App;
